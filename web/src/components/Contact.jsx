@@ -26,9 +26,9 @@ export default function Contact(){
   }
 
   return (
-    <section id="contact" className="bg-black border-t border-white/[0.07]">
-      <div className="mx-auto max-w-[760px] px-5 md:px-6 py-16 md:py-24">
-        <h2 className="text-center text-[clamp(36px,6vw,72px)] font-medium leading-[0.96] tracking-[-0.04em]">
+    <section id="contact" className="bg-black border-t border-white/[0.07] overflow-x-clip">
+      <div className="mx-auto max-w-[760px] px-4 xs:px-5 md:px-6 py-12 sm:py-16 md:py-24">
+        <h2 className="text-center text-[clamp(30px,7.5vw,72px)] sm:text-[clamp(36px,6vw,72px)] font-medium leading-[0.96] tracking-[-0.04em] break-safe">
           <span className="block text-[#f4f2ed]">Let’s build something</span>
           <span className="block text-[#f4f2ed]/52">people actually use</span>
         </h2>
@@ -45,7 +45,7 @@ export default function Contact(){
           <span className="font-semibold text-[#f4f2ed]">2 LEFT</span>
         </div>
 
-        <form onSubmit={handleSubmit} noValidate className="mt-12 flex flex-col gap-[22px]">
+        <form onSubmit={handleSubmit} noValidate className="mt-8 sm:mt-12 flex flex-col gap-5 sm:gap-[22px]">
           {[
             { id:"01", label:"NAME", name:"name", placeholder:"Your name", type:"text" },
             { id:"02", label:"EMAIL", name:"email", placeholder:"you@studio.com", type:"email" },
@@ -55,7 +55,7 @@ export default function Contact(){
                 <span className="text-[#db3903]">{f.id}</span>
                 <span className="text-[#f4f2ed]/70">{f.label}</span>
               </label>
-              <input name={f.name} type={f.type} placeholder={f.placeholder} className={`w-full rounded-[6px] border bg-[#0a0a0a] px-4 py-[14px] text-[13px] tracking-tight text-[#f4f2ed] placeholder:text-[#f4f2ed]/32 outline-none transition focus:bg-[#111111] focus:outline-2 focus:outline-offset-2 focus:outline-[#f4f2ed]/14 ${errors[f.name] ? "border-[#db3903]" : "border-white/[0.06] focus:border-[#f4f2ed]/60"}`} />
+              <input name={f.name} type={f.type} placeholder={f.placeholder} className={`w-full rounded-[6px] border bg-[#0a0a0a] px-3.5 xs:px-4 py-3 xs:py-[14px] text-[13px] tracking-tight text-[#f4f2ed] placeholder:text-[#f4f2ed]/32 outline-none transition focus:bg-[#111111] focus:outline-2 focus:outline-offset-2 focus:outline-[#f4f2ed]/14 ${errors[f.name] ? "border-[#db3903]" : "border-white/[0.06] focus:border-[#f4f2ed]/60"}`} />
               {errors[f.name] && <div className="mt-1 text-[11px] text-[#db3903]">Required.</div>}
             </motion.div>
           ))}
@@ -67,7 +67,7 @@ export default function Contact(){
               <span className="text-[#f4f2ed]/70">TOPIC</span>
             </label>
             <div className="relative">
-              <button type="button" onClick={()=> setOpen(o=>!o)} className="flex w-full items-center justify-between rounded-[6px] border border-white/[0.06] bg-[#0a0a0a] px-4 py-[14px] text-[13px] tracking-tight text-[#f4f2ed] hover:bg-[#111] transition">
+              <button type="button" onClick={()=> setOpen(o=>!o)} className="flex w-full items-center justify-between rounded-[6px] border border-white/[0.06] bg-[#0a0a0a] px-3.5 xs:px-4 py-3 xs:py-[14px] text-[13px] tracking-tight text-[#f4f2ed] hover:bg-[#111] transition">
                 <span>{proj}</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" className={`text-white/55 transition ${open?"rotate-180":""}`} fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M6 9l6 6 6-6"/></svg>
               </button>
@@ -87,7 +87,7 @@ export default function Contact(){
               <span className="text-[#db3903]">04</span>
               <span className="text-[#f4f2ed]/70">DETAILS</span>
             </label>
-            <textarea name="brief" rows={4} placeholder="Your idea, context, timeline — and the one problem to solve." className={`w-full resize-y rounded-[6px] border bg-[#0a0a0a] px-4 py-[14px] text-[13px] tracking-tight text-[#f4f2ed] placeholder:text-[#f4f2ed]/32 outline-none transition focus:bg-[#111111] focus:border-[#f4f2ed]/60 focus:outline-2 focus:outline-offset-2 focus:outline-[#f4f2ed]/14 ${errors.brief ? "border-[#db3903]" : "border-white/[0.06]"}`} />
+            <textarea name="brief" rows={4} placeholder="Your idea, context, timeline — and the one problem to solve." className={`w-full resize-y rounded-[6px] border bg-[#0a0a0a] px-3.5 xs:px-4 py-3 xs:py-[14px] text-[13px] tracking-tight text-[#f4f2ed] placeholder:text-[#f4f2ed]/32 outline-none transition focus:bg-[#111111] focus:border-[#f4f2ed]/60 focus:outline-2 focus:outline-offset-2 focus:outline-[#f4f2ed]/14 ${errors.brief ? "border-[#db3903]" : "border-white/[0.06]"}`} />
             {errors.brief && <div className="mt-1 text-[11px] text-[#db3903]">Required.</div>}
           </motion.div>
 

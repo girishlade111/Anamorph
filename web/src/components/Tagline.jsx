@@ -35,22 +35,22 @@ export default function Tagline(){
   // duplicate for seamless loop
   const track = [...logos, ...logos, ...logos, ...logos]
   return (
-    <section className="bg-black border-t border-white/[0.07]">
-      <div className="mx-auto max-w-[1200px] px-5 md:px-10 pt-[84px] pb-12">
-        <h2 className="max-w-[14ch] text-left text-[clamp(36px,6.2vw,78px)] font-medium leading-[0.94] tracking-[-0.04em]">
+    <section className="bg-black border-t border-white/[0.07] overflow-x-clip">
+      <div className="mx-auto max-w-[1200px] px-4 xs:px-5 md:px-10 pt-[56px] sm:pt-[72px] md:pt-[84px] pb-8 sm:pb-12">
+        <h2 className="max-w-[14ch] text-left text-[clamp(30px,7.5vw,78px)] sm:text-[clamp(36px,6.2vw,78px)] font-medium leading-[0.94] tracking-[-0.04em] break-safe">
           <RevealWords text="The tools you reach for when it" delay={0.1} />
           <br/>
           <RevealWords text="has to just work, not just launch" muted delay={0.34} />
         </h2>
-        <div className="mt-[22px] text-[10px] uppercase tracking-[0.1em] text-[#f4f2ed]/35 font-medium">LADE STACK — 2024–2026</div>
+        <div className="mt-4 sm:mt-[22px] text-[10px] uppercase tracking-[0.1em] text-[#f4f2ed]/35 font-medium">LADE STACK — 2024–2026</div>
       </div>
 
       {/* marquee */}
       <div className="relative overflow-hidden mask-fade bg-black pb-2">
-        <div className="flex w-max gap-4 py-4" style={{ animation: "marquee 28s linear infinite" }}>
+        <div className="flex w-max gap-3 sm:gap-4 py-3 sm:py-4" style={{ animation: "marquee 28s linear infinite" }}>
           {track.map((l, i) => (
-            <div key={i} className="flex h-[104px] w-[180px] shrink-0 items-center justify-center rounded-[20px] border border-white/[0.06] bg-[#0a0a0a] px-6">
-              <span className="text-[14px] font-semibold tracking-[-0.02em] text-[#c8c4bf] whitespace-nowrap">{l}</span>
+            <div key={i} className="flex h-[84px] w-[148px] sm:h-[96px] sm:w-[168px] md:h-[104px] md:w-[180px] shrink-0 items-center justify-center rounded-[16px] sm:rounded-[20px] border border-white/[0.06] bg-[#0a0a0a] px-4 sm:px-6">
+              <span className="text-[11px] sm:text-[13px] md:text-[14px] font-semibold tracking-[-0.02em] text-[#c8c4bf] whitespace-nowrap text-center leading-tight break-safe">{l}</span>
             </div>
           ))}
         </div>

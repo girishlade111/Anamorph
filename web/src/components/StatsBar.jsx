@@ -57,8 +57,8 @@ export default function StatsBar({variant="primary"}){
         {v:"24H",s:"",l:"INQUIRY RESPONSE",d:290, note:"[FILL: your avg response time — replace if different]"},
       ]
   return (
-    <section className="bg-black border-y border-white/[0.07]">
-      <div className="mx-auto max-w-[1280px] px-5 md:px-10">
+    <section className="bg-black border-y border-white/[0.07] overflow-x-clip">
+      <div className="mx-auto max-w-[1280px] px-4 xs:px-5 md:px-10">
         {/* ruler */}
         <div className="relative h-[22px] border-b border-white/[0.06]">
           <div className="absolute inset-x-0 bottom-0 flex justify-between px-1 opacity-40">
@@ -75,19 +75,19 @@ export default function StatsBar({variant="primary"}){
             ))}
           </div>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 py-8 md:py-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 xs:gap-8 md:gap-6 py-6 xs:py-8 md:py-10">
           {items.map(it=>{
             const isFill = typeof it.v === "string" && it.v.includes("[FILL")
             const isStatic = typeof it.v === "string" && (it.v==="FREE"||it.v==="NO")
             if(isFill || isStatic){
               return (
-                <div key={it.l} className="will-change-transform">
-                  <div className="text-[clamp(28px,4.2vw,52px)] font-medium leading-none tracking-[-0.04em] text-[#f4f2ed] break-words">
+                <div key={it.l} className="will-change-transform min-w-0">
+                  <div className="text-[clamp(22px,7.2vw,52px)] xs:text-[clamp(28px,4.2vw,52px)] font-medium leading-none tracking-[-0.04em] text-[#f4f2ed] break-words">
                     {it.v}{it.s}
-                    {isFill && <span className="ml-1 text-[9px] align-super font-mono tracking-[0.04em] text-[#f4f2ed]/35">*</span>}
+                    {isFill && <span className="ml-1 text-[8px] xs:text-[9px] align-super font-mono tracking-[0.04em] text-[#f4f2ed]/35">*</span>}
                   </div>
-                  <div className="mt-[10px] text-[10px] uppercase tracking-[0.08em] text-[#f4f2ed]/45 font-medium">{it.l}</div>
-                  {it.note && <div className="mt-1 text-[9px] font-mono leading-[1.3] text-amber-300/70">{it.note}</div>}
+                  <div className="mt-2 xs:mt-[10px] text-[9px] xs:text-[10px] uppercase tracking-[0.08em] text-[#f4f2ed]/45 font-medium leading-tight break-safe">{it.l}</div>
+                  {it.note && <div className="mt-1 text-[8px] xs:text-[9px] font-mono leading-[1.3] text-amber-300/70 break-words">{it.note}</div>}
                 </div>
               )
             }

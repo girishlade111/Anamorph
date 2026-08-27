@@ -42,16 +42,27 @@ body {
   font-family: "Space Grotesk", "Instrument Sans", "BDO Grotesk Variable", system-ui, sans-serif;
   background: #000000;
   color: #f4f2ed;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 }
 
 #root {
   width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
   min-height: 100svh;
+  min-height: 100dvh;
   isolation: isolate;
+}
+
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
 /* hide horizontal overflow during pin */
@@ -92,6 +103,26 @@ body::-webkit-scrollbar-thumb:hover { background: #2a2a2a; }
 .mask-fade {
   mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+}
+@media (max-width: 640px) {
+  .mask-fade {
+    mask-image: linear-gradient(to right, transparent 0, black 12%, black 88%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 12%, black 88%, transparent 100%);
+  }
+}
+
+/* responsive primitives */
+@media (max-width: 640px) {
+  .grain { opacity: 0.025; }
+}
+@media (max-width: 375px) {
+  html { font-size: 15px; }
+}
+/* prevent long words breaking layout */
+.break-safe { overflow-wrap: anywhere; word-break: break-word; }
+/* sticky sections need dvh fallback on iOS */
+@supports not (height: 100svh) {
+  .h-\[100svh\] { height: 100vh; }
 }
 
 /* viewfinder cross hair flicker */

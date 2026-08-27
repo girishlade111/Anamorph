@@ -1,8 +1,8 @@
 export default function Footer(){
   return (
-    <footer className="bg-black border-t border-white/[0.07]">
-      <div className="mx-auto max-w-[1100px] px-5 md:px-10 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+    <footer className="bg-black border-t border-white/[0.07] overflow-x-clip">
+      <div className="mx-auto max-w-[1100px] px-4 xs:px-5 md:px-10 pt-12 sm:pt-16 pb-10 pb-[calc(10px+env(safe-area-inset-bottom))]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12">
           <div>
             <div className="text-[10px] font-medium uppercase tracking-[0.12em] text-[#f4f2ed]/38">(00) — STUDIO</div>
             <p className="mt-4 max-w-[28ch] text-[13px] leading-[1.55] text-[#f4f2ed]/56">
@@ -40,9 +40,9 @@ export default function Footer(){
           </div>
         </div>
 
-        <div className="mt-12 flex items-center justify-between border-t border-white/[0.07] pt-6 text-[9px] font-mono tracking-[0.08em] text-[#f4f2ed]/32">
+        <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-between gap-3 border-t border-white/[0.07] pt-6 text-[9px] font-mono tracking-[0.08em] text-[#f4f2ed]/32">
           <span>© 2026 — LADE STACK™</span>
-          <span className="text-[#f4f2ed]/22">+</span>
+          <span className="hidden xs:inline text-[#f4f2ed]/22">+</span>
           <span>FOUNDER — GIRISH LADE</span>
         </div>
       </div>

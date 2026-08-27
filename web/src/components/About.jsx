@@ -43,33 +43,33 @@ export default function About(){
   const yImg = useTransform(scrollYProgress, [0,1], ["-3%","-9%"])
 
   return (
-    <section id="about" ref={ref} className="bg-black border-t border-white/[0.07]">
-      <div className="mx-auto grid max-w-[1100px] grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-14 px-5 md:px-10 py-16 md:py-24">
-        <div className="relative w-full max-w-[380px] aspect-[3/4] overflow-hidden rounded-[6px] border border-white/[0.06] bg-[#0a0a0a] mx-auto md:mx-0">
-          <motion.img style={{ y: yImg }} src="/about-noah.jpg" alt="Girish Lade — founder, Lade Stack (TODO: replace with your portrait — 380×507, 3:4, centered)" className="absolute inset-[-3%] h-[106%] w-[106%] object-cover will-change-transform" />
+    <section id="about" ref={ref} className="bg-black border-t border-white/[0.07] overflow-x-clip">
+      <div className="mx-auto grid max-w-[1100px] grid-cols-1 md:grid-cols-2 items-center gap-8 sm:gap-10 md:gap-14 px-4 xs:px-5 md:px-10 py-12 sm:py-16 md:py-24">
+        <div className="relative w-full max-w-[340px] xs:max-w-[360px] sm:max-w-[380px] aspect-[3/4] overflow-hidden rounded-[6px] border border-white/[0.06] bg-[#0a0a0a] mx-auto md:mx-0">
+          <motion.img style={{ y: yImg }} src="/about-noah.jpg" alt="Girish Lade — founder, Lade Stack (TODO: replace with your portrait — 380×507, 3:4, centered)" className="absolute inset-[-3%] h-[106%] w-[106%] object-cover will-change-transform" loading="lazy" />
           {/* signature overlay — TODO: replace path with your handwritten signature SVG if available, keep same stroke 1.6 */}
-          <div className="absolute -right-3 -top-3 md:-right-4 md:-top-4 rotate-[-6deg]">
+          <div className="absolute -right-2 -top-2 xs:-right-3 xs:-top-3 md:-right-4 md:-top-4 rotate-[-6deg] scale-[0.82] xs:scale-[0.9] sm:scale-100 origin-top-right">
             <Signature/>
           </div>
-          <div className="absolute inset-x-3 bottom-2 flex items-center justify-between text-[8px] font-mono uppercase tracking-[0.06em] text-[#f4f2ed]/40">
-            <span>GIRISH_LADE@LADESTACK</span>
-            <span>MECH — PROD BUILDER</span>
+          <div className="absolute inset-x-2 xs:inset-x-3 bottom-1.5 xs:bottom-2 flex items-center justify-between text-[7px] xs:text-[8px] font-mono uppercase tracking-[0.06em] text-[#f4f2ed]/40 gap-2">
+            <span className="truncate">GIRISH_LADE@LADESTACK</span>
+            <span className="shrink-0">MECH — PROD BUILDER</span>
           </div>
         </div>
 
-        <div>
-          <h2 className="text-[clamp(28px,3.4vw,42px)] font-medium leading-[1.02] tracking-[-0.03em] text-[#f4f2ed]">
+        <div className="min-w-0">
+          <h2 className="text-[clamp(26px,7vw,42px)] sm:text-[clamp(28px,3.4vw,42px)] font-medium leading-[1.02] tracking-[-0.03em] text-[#f4f2ed] break-safe">
             Every tool built<br/>by the same person
           </h2>
-          <div className="mt-8 flex flex-col items-start gap-[14px]">
+          <div className="mt-6 sm:mt-8 flex flex-col items-start gap-3 sm:gap-[14px]">
             {credits.map(([label, value],i)=>(
               <motion.div key={label} initial={{ opacity:0, y:10 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }} transition={{ duration:0.55, ease:[0.16,1,0.3,1], delay: i*0.07 }} className="flex w-full max-w-[320px] flex-col items-start">
-                <span className={`text-[10px] uppercase tracking-[0.12em] ${i>=4? "text-[#f4f2ed]/28" : "text-[#f4f2ed]/38"}`}>{label}</span>
-                <span className={`mt-1 text-[22px] font-medium ${i>=4? "text-[#a8a5a0]" : "text-[#f4f2ed]"}`}>{value}</span>
+                <span className={`text-[9px] sm:text-[10px] uppercase tracking-[0.12em] ${i>=4? "text-[#f4f2ed]/28" : "text-[#f4f2ed]/38"}`}>{label}</span>
+                <span className={`mt-1 text-[18px] xs:text-[20px] sm:text-[22px] font-medium ${i>=4? "text-[#a8a5a0]" : "text-[#f4f2ed]"}`}>{value}</span>
               </motion.div>
             ))}
           </div>
-          <p className="mt-8 max-w-[40ch] text-[13px] leading-[1.55] text-[#f4f2ed]/55">
+          <p className="mt-6 sm:mt-8 max-w-[40ch] text-[12.5px] sm:text-[13px] leading-[1.55] text-[#f4f2ed]/55 break-safe">
             <span className="font-medium text-[#f4f2ed]">Same name on every commit.</span> I design, build, and ship every product end-to-end — from UX to production.
           </p>
         </div>
