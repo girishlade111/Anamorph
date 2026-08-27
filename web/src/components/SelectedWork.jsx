@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const slides = [
-  { id:"01", name:"Meridian", img:"/work-meridian-real.jpg", year:"2026", tall:false, desc:"Eyes macro — warm 3200K slit" },
-  { id:"02", name:"Citadel", img:"/work-citadel-real.jpg", year:"2026", tall:false, desc:"Architecture golden hour" },
-  { id:"03", name:"Karama", img:"/work-karama-real.jpg", year:"2026", tall:false, desc:"Profile cool blue key" },
+  // TODO: swap image references to your photos/product screenshots — expected 640×500 (aspect 1.28) min 1280w, subject centered, keep viewfinder brackets legibility.
+  // Images currently use placeholder frames — replace with: /hero.jpg (your portrait, 2560×1096 21:9) or product screenshots (LS PDF, Coder) cropped to 4:3.
+  { id:"01", name:"LADE STACK", img:"/hero.jpg", year:"2026", tall:false, desc:"TODO: replace with your portrait/product shot — 640×500, keep negative space" },
+  { id:"02", name:"LADE STACK", img:"/work-citadel-real.jpg", year:"2026", tall:false, desc:"TODO: replace with product screenshot — 640×500" },
+  { id:"03", name:"LADE STACK", img:"/work-karama-real.jpg", year:"2026", tall:false, desc:"TODO: replace with product screenshot — 640×500" },
 ]
 
 export default function SelectedWork(){
@@ -29,7 +31,7 @@ export default function SelectedWork(){
       <div className="sticky top-0 h-[100vh] overflow-hidden">
         {/* header ticks */}
         <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between border-y border-white/[0.07] bg-black/40 backdrop-blur-[2px] px-5 md:px-7 py-[10px] text-[10px] font-mono uppercase tracking-[0.08em] text-[#f4f2ed]/45">
-          <span>(01) — SELECTED WORK</span>
+          <span>(01) — LADE STACK</span>
           <span className="hidden md:inline text-[#f4f2ed]/18">+</span>
           <span>2026</span>
         </div>

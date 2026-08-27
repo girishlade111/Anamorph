@@ -39,9 +39,23 @@ function Stat({value,suffix,label,delay}){
 }
 
 export default function StatsBar({variant="primary"}){
+  // CONTENT-ONLY SWAP — numeric stats replaced with [FILL] placeholders per instructions. No layout/CSS changed.
+  // Primary row: real Lade Stack metrics not yet provided — flagged.
+  // Footer variant repurposed: FREE FOREVER / NO LOGIN / TOOLS LIVE / RESPONSE — flagged.
   const items = variant==="primary"
-    ? [{v:120,s:"+",l:"PROJECTS DELIVERED",d:100},{v:48,s:"M+",l:"VIEWS GENERATED",d:200},{v:12,s:"",l:"YEARS EDITING",d:300},{v:24,s:"H",l:"FIRST CUT",d:400}]
-    : [{v:24,s:"H",l:"REPLY TIME",d:80},{v:2,s:"",l:"REVISION ROUNDS",d:150},{v:98,s:"%",l:"ON-TIME DELIVERY",d:220},{v:5,s:"D",l:"FIRST CUT",d:290}]
+    ? [
+        // {v/value display} — if string contains [FILL], animation is bypassed
+        {v:"[FILL: 6+]",s:"",l:"TOOLS SHIPPED",d:100, note:"[FILL: exact count of tools live on ladestack.in — e.g. 6+]" },
+        {v:"[FILL]",s:"",l:"VISITS / USERS",d:200, note:"[FILL: real visits if tracked, else replace with — or remove — DO NOT fabricate]" },
+        {v:"[FILL]",s:"",l:"MONTHS ACTIVE",d:300, note:"[FILL: months since first tool shipped]" },
+        {v:"FREE",s:"",l:"FREE FOREVER — NO LOGIN",d:400, note:"static, not a count"},
+      ]
+    : [
+        {v:"FREE",s:"",l:"FREE FOREVER",d:80},
+        {v:"NO",s:" LOGIN",l:"NO LOGIN REQUIRED",d:150},
+        {v:"[FILL]",s:"",l:"TOOLS LIVE",d:220, note:"[FILL: live tools count]"},
+        {v:"24H",s:"",l:"INQUIRY RESPONSE",d:290, note:"[FILL: your avg response time — replace if different]"},
+      ]
   return (
     <section className="bg-black border-y border-white/[0.07]">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10">
@@ -62,7 +76,23 @@ export default function StatsBar({variant="primary"}){
           </div>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-6 py-8 md:py-10">
-          {items.map(it=> <Stat key={it.l} value={it.v} suffix={it.s} label={it.l} delay={it.d}/>)}
+          {items.map(it=>{
+            const isFill = typeof it.v === "string" && it.v.includes("[FILL")
+            const isStatic = typeof it.v === "string" && (it.v==="FREE"||it.v==="NO")
+            if(isFill || isStatic){
+              return (
+                <div key={it.l} className="will-change-transform">
+                  <div className="text-[clamp(28px,4.2vw,52px)] font-medium leading-none tracking-[-0.04em] text-[#f4f2ed] break-words">
+                    {it.v}{it.s}
+                    {isFill && <span className="ml-1 text-[9px] align-super font-mono tracking-[0.04em] text-[#f4f2ed]/35">*</span>}
+                  </div>
+                  <div className="mt-[10px] text-[10px] uppercase tracking-[0.08em] text-[#f4f2ed]/45 font-medium">{it.l}</div>
+                  {it.note && <div className="mt-1 text-[9px] font-mono leading-[1.3] text-amber-300/70">{it.note}</div>}
+                </div>
+              )
+            }
+            return <Stat key={it.l} value={it.v} suffix={it.s} label={it.l} delay={it.d}/>
+          })}
         </div>
       </div>
     </section>

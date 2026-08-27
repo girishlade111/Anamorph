@@ -3,34 +3,34 @@ import { motion } from "framer-motion"
 const services = [
   {
     num:"01",
-    title:"Long-form Edits",
-    desc:"Cut for retention — narrative-first structure, clean dialogues, endings that land. 8–22 minute masters built to be watched to the last frame.",
-    img:"/work-meridian-real.jpg",
-    tag:"FEATURE — 12 MIN FINAL",
+    title:"Product Design & UX",
+    desc:"Clean, no-friction interfaces — free to use, no login, built to feel effortless. If it needs a manual, it’s over-designed.",
+    img:"/work-meridian-real.jpg", // TODO: replace with product screenshot — 280×150 (16:9), e.g. LS PDF UI, keep object-cover 1.04 hover
+    tag:"UX — NO-LOGIN, INSTANT USE",
     altRight:false
   },
   {
     num:"02",
-    title:"Short-form Reels",
-    desc:"Hooks in 1.2 seconds, payoffs by 17. Shot 9:16 native — no crop rescues, just planned coverage and smart punch-ins.",
-    img:"/phone-reel-1.jpg",
-    tag:"REELS — 0:15 CUT-DOWNS",
+    title:"AI-Powered Dev Tools",
+    desc:"Practical AI that does the job — not demos. From PDF ops to code helpers, tools that save hours, not add steps.",
+    img:"/phone-reel-1.jpg", // TODO: picks your product screenshot — 280×150
+    tag:"AI — FREE, PRODUCTION-GRADE",
     altRight:true
   },
   {
     num:"03",
-    title:"Colour Grade",
-    desc:"Log footage graded to feel like film — consistent skin, lifted blacks, a look that carries the whole cut without shouting.",
-    img:"/work-karama-real.jpg",
-    tag:"LOOK — FILM EMULATION 35MM",
+    title:"Full-Stack Engineering",
+    desc:"End-to-end solo builds — frontend, backend, AI integrations, infra. What you see in prod is what I shipped alone.",
+    img:"/work-karama-real.jpg", // TODO: replace — code/editor screenshot 280×150
+    tag:"STACK — REACT / NODE / AI",
     altRight:false
   },
   {
     num:"04",
-    title:"Motion & Titles",
-    desc:"Titles, lower-thirds and animated type that move with the edit — clean systems that scale across a full series, not one-offs.",
-    img:"/work-citadel-real.jpg",
-    tag:"SYSTEM — TYPE + LOWER THIRDS",
+    title:"Brand & Growth",
+    desc:"Lade Stack isn’t just code — it’s positioning, content, and distribution. Building a suite people actually find and return to.",
+    img:"/work-citadel-real.jpg", // TODO: replace — analytics/growth screenshot 280×150
+    tag:"GROWTH — ladestack.in",
     altRight:true
   },
 ]

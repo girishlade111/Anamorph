@@ -1,9 +1,10 @@
 import { motion } from "framer-motion"
 
 const plans = [
-  { num:"01", title:"One Cut", desc:"A single feature or film-grade reel — pre-pro, edit, colour, two passes of revisions.", tag:"PROJECT — UP TO 12 MIN", eyebrow:"FROM — FLAT", price:"$4,800" },
-  { num:"02", title:"Retainer", desc:"A monthly slate. Long-form plus cut-downs, priority turnaround, dedicated calendar slot.", tag:"SLATE — 4–8 CUTS / MONTH", eyebrow:"FROM — MONTHLY", price:"$6,400" },
-  { num:"03", title:"Day Rate", desc:"A focused day on-set or in-suite. Edit, colour or motion. Bookable in 1-day blocks.", tag:"SESSION — UP TO 10 HRS", eyebrow:"PER DAY", price:"$850" },
+  // CONTENT-ONLY — default to (b) How I work, since Lade Stack tools are free. Prices are [FILL] — do not fabricate.
+  { num:"01", title:"Solo Build", desc:"Free, production-grade tools at ladestack.in — no login, no paywall. I design, code, and maintain everything solo, inspired by real dev friction.", tag:"PRODUCT — SHIPPED SOLO", eyebrow:"FREE FOREVER", price:"[FILL: —]" },
+  { num:"02", title:"Advisory / Consulting", desc:"Thought-partner for product, UX, or AI-tooling — reviews, roadmaps, and build guidance.", tag:"SESSION — [FILL: SCOPE]", eyebrow:"[FILL: RATE]", price:"[FILL: $/hr]" },
+  { num:"03", title:"Custom Tool Dev", desc:"Need a bespoke internal tool or AI workflow? I scope and ship it end-to-end — fast, private, maintainable.", tag:"PROJECT — [FILL: SCOPE]", eyebrow:"[FILL: RATE]", price:"[FILL: $ flat]" },
 ]
 
 export default function Pricing(){
@@ -11,8 +12,8 @@ export default function Pricing(){
     <section className="bg-black border-t border-white/[0.07]">
       <div className="mx-auto max-w-[1040px] px-5 md:px-10 py-16 md:py-20">
         <h2 className="text-center text-[clamp(36px,5.6vw,72px)] font-medium leading-[0.95] tracking-[-0.04em]">
-          <span className="block text-[#f4f2ed]">Clear rates up front</span>
-          <span className="block text-[#f4f2ed]/52">no surprises later</span>
+          <span className="block text-[#f4f2ed]">How I work — solo,</span>
+          <span className="block text-[#f4f2ed]/52">end-to-end, no handoffs</span>
         </h2>
 
         <div className="mt-12 border-t border-white/[0.08]">

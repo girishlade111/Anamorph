@@ -16,7 +16,8 @@ export default function Hero() {
       <motion.div style={{ y: yImg, scale: scaleImg }} className="absolute inset-[-4%] will-change-transform">
         <img
           src="/hero.jpg"
-          alt="Noah Reyes — editor portrait"
+          alt="Girish Lade — founder portrait"
+          /* TODO: replace /hero.jpg with your photo — exact aspect 21:9 landscape, subject centered, eyes upper-third, min 2560×1096, keep negative space left/right for overlay */
           className="h-full w-full object-cover object-[48%_28%] md:object-[50%_36%]"
           fetchPriority="high"
           decoding="async"
@@ -52,7 +53,7 @@ export default function Hero() {
 
       {/* top nav */}
       <header className="relative z-20 flex items-center justify-between px-5 md:px-7 py-5 md:py-6">
-        <a href="#" className="text-[15px] font-semibold tracking-[-0.02em] text-[#f4f2ed] hover:opacity-90 transition">Anamorph™</a>
+        <a href="#" className="text-[15px] font-semibold tracking-[-0.02em] text-[#f4f2ed] hover:opacity-90 transition">Lade Stack™</a>
         <nav className="hidden md:flex items-center gap-7 text-[11px] font-medium tracking-tight">
           <a href="#work" className="text-[#f4f2ed]">Work <span className="opacity-40 text-[10px] ml-1">01</span></a>
           <a href="#reels" className="text-[#f4f2ed]/55 hover:text-[#f4f2ed] transition">Reels <span className="opacity-40 text-[10px] ml-1">02</span></a>
@@ -80,13 +81,13 @@ export default function Hero() {
             transition={{ duration: 0.65, ease: [0.16,1,0.3,1], delay: 0.18 }}
             className="hidden md:block md:col-span-4 md:pr-10"
           >
-            <div className="text-[10px] uppercase tracking-[0.1em] text-[#f4f2ed]/45 font-medium">(01) — SERVICES</div>
+            <div className="text-[10px] uppercase tracking-[0.1em] text-[#f4f2ed]/45 font-medium">(01) — FOCUS</div>
             <div className="mt-4 space-y-[3px] text-[13px] leading-[1.45] text-[#f4f2ed]">
-              {["Long-form Edits","Short-form Reels","Colour Grade","Motion & Titles"].map((t,i)=> (
+              {["Product Design & UX","AI-Powered Dev Tools","Full-Stack Engineering","Brand & Growth"].map((t,i)=> (
                 <motion.div key={t} initial={{opacity:0,y:10}} animate={{opacity:1,y:0}} transition={{delay:0.28 + i*0.06, duration:0.55, ease:[0.16,1,0.3,1]}}>{t}</motion.div>
               ))}
             </div>
-            <div className="mt-4 text-[10px] tracking-[0.05em] text-[#f4f2ed]/30 font-mono">(EST. 2026 — REEL V2.4)</div>
+            <div className="mt-4 text-[10px] tracking-[0.05em] text-[#f4f2ed]/30 font-mono">(EST. 2024 — LADE STACK V1)</div>
           </motion.div>
 
           {/* right tagline + card */}
@@ -99,14 +100,14 @@ export default function Hero() {
               className="inline-flex items-center gap-3 rounded-[14px] border border-white/[0.08] bg-[rgba(18,18,18,0.72)] p-[6px] pr-[14px] backdrop-blur-[16px] shadow-[0_10px_30px_rgba(0,0,0,0.45)] will-change-transform"
               style={{ animation: "floatY 3.8s ease-in-out infinite" }}
             >
-              <img src="/hero.jpg" alt="Noah Reyes thumbnail" className="h-11 w-11 md:h-[44px] md:w-[44px] rounded-[10px] object-cover object-top" />
+              <img src="/hero.jpg" alt="Girish Lade thumbnail" className="h-11 w-11 md:h-[44px] md:w-[44px] rounded-[10px] object-cover object-top" />
               <div className="text-left leading-tight">
-                <div className="text-[12px] font-semibold tracking-tight text-white">Hey, I’m Noah</div>
-                <div className="text-[11px] font-medium tracking-tight text-white/60">Editor & Colourist</div>
+                <div className="text-[12px] font-semibold tracking-tight text-white">Hey, I’m Girish</div>
+                <div className="text-[11px] font-medium tracking-tight text-white/60">Founder, Lade Stack</div>
               </div>
-              <button aria-label="Play reel" className="ml-2 grid h-[28px] w-[28px] place-items-center rounded-full bg-white text-black transition hover:scale-105">
+              <a href="https://ladestack.in" target="_blank" rel="noreferrer" aria-label="Open Lade Stack" className="ml-2 grid h-[28px] w-[28px] place-items-center rounded-full bg-white text-black transition hover:scale-105">
                 <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M8 5.14v14l11-7-11-7z"/></svg>
-              </button>
+              </a>
             </motion.div>
 
             <motion.p
@@ -115,9 +116,9 @@ export default function Hero() {
               transition={{ duration: 0.7, ease: [0.16,1,0.3,1], delay: 0.5 }}
               className="max-w-[34ch] md:max-w-[32ch] text-[15px] md:text-[15.5px] font-normal leading-[1.45] tracking-tight text-[#f4f2ed] md:text-right"
             >
-              <span className="font-medium">Cinematic editing</span> <span className="text-[#f4f2ed]/70">for premium creatives</span><br className="hidden md:block" />
-              <span className="text-[#f4f2ed]/70"> and brands — long-form and short-form, cut</span><br className="hidden md:block" />
-              <span className="text-[#f4f2ed]/70"> for retention and graded so it feels like </span><span className="font-medium">film.</span>
+              <span className="font-medium">Free, no-login dev tools</span> <span className="text-[#f4f2ed]/70">for builders — fast, private,</span><br className="hidden md:block" />
+              <span className="text-[#f4f2ed]/70"> and production-grade. Solo-built at</span><br className="hidden md:block" />
+              <span className="text-[#f4f2ed]/70"> ladestack.in for people who </span><span className="font-medium">just need it to work.</span>
             </motion.p>
           </div>
         </div>
@@ -131,14 +132,14 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: [0.16,1,0.3,1], delay: 0.14 }}
         className="pointer-events-none absolute inset-x-0 bottom-[-0.06em] z-[6] select-none overflow-hidden text-center font-bold leading-[0.82] tracking-[-0.05em] text-[#f4f2ed] will-change-transform"
       >
-        <span className="block whitespace-nowrap text-[clamp(72px,20vw,340px)]">Anamorph</span>
+        <span className="block whitespace-nowrap text-[clamp(64px,19vw,320px)]">LADE STACK</span>
       </motion.h1>
 
       {/* mobile services below hero for small screens */}
       <div className="absolute bottom-[74px] left-5 right-5 flex md:hidden items-end justify-between z-10">
         <div className="text-[11px] leading-4 text-white/90">
-          <div className="opacity-50 text-[9px] tracking-[0.1em]"> (01) — SERVICES</div>
-          <div className="mt-1.5 space-y-0.5">Long-form Edits<br/>Short-form Reels<br/>Colour Grade<br/>Motion & Titles</div>
+          <div className="opacity-50 text-[9px] tracking-[0.1em]"> (01) — FOCUS</div>
+          <div className="mt-1.5 space-y-0.5">Product Design & UX<br/>AI-Powered Tools<br/>Full-Stack Engineering<br/>Brand & Growth</div>
         </div>
         <div className="hidden" />
       </div>

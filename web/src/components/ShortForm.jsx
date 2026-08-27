@@ -2,8 +2,9 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const reels = [
-  { id:1, handle:"@maison.veldt", caption:"Autumn drop — shot cold, graded warm.", img:"/hero-alt-1.jpg", likes:"48.2k", comments:"612", shares:"1.2k" },
-  { id:2, handle:"@sable.jun", caption:"Under real starlight, no relight.", img:"/about-noah.jpg", likes:"21.1k", comments:"204", shares:"540" },
+  // TODO: picks your vertical 9:16 shots — exact 340×604 (or 540×960), subject centered, keep bottom 45% scrim for caption legibility.
+  { id:1, handle:"Girish Lade — Founder, Lade Stack", caption:"Solo-built. Free forever. No login.", img:"/hero.jpg", likes:"—", comments:"—", shares:"—" /* TODO: replace likes/comments with real product stats or remove */ },
+  { id:2, handle:"Girish Lade — Founder, Lade Stack", caption:"Designs UX, ships product, handles growth.", img:"/about-noah.jpg", likes:"—", comments:"—", shares:"—" },
 ]
 
 export default function ShortForm(){
@@ -23,16 +24,16 @@ export default function ShortForm(){
       <div className="sticky top-0 grid h-[100vh] place-items-center overflow-hidden">
         {/* header ticks */}
         <div className="absolute inset-x-0 top-0 flex items-center justify-between px-5 md:px-7 py-[10px] text-[10px] font-mono uppercase tracking-[0.08em] text-[#f4f2ed]/38">
-          <span>(03) — SHORT-FORM REELS</span>
+          <span>(03) — BUILD PHILOSOPHY</span>
           <span className="hidden md:inline opacity-30">+</span>
           <span>00:03:00:00</span>
         </div>
 
         <div className="mx-auto grid w-full max-w-[1160px] grid-cols-1 md:grid-cols-[1fr_auto_1fr] items-center gap-6 px-5 md:px-6 py-10">
           {/* left word */}
-          <motion.div style={{ color: shortColor }} className="hidden md:block justify-self-end text-right text-[clamp(64px,9vw,164px)] font-semibold leading-none tracking-[-0.04em] will-change-[color]">Short</motion.div>
+          <motion.div style={{ color: shortColor }} className="hidden md:block justify-self-end text-right text-[clamp(64px,9vw,164px)] font-semibold leading-none tracking-[-0.04em] will-change-[color]">Build</motion.div>
           <div className="flex flex-col items-center md:hidden">
-            <div className="text-[48px] font-semibold leading-none tracking-[-0.04em] text-[#f4f2ed]">Short</div>
+            <div className="text-[48px] font-semibold leading-none tracking-[-0.04em] text-[#f4f2ed]">Build</div>
           </div>
 
           {/* phone */}
@@ -84,12 +85,12 @@ export default function ShortForm(){
             <div className="pointer-events-none absolute inset-0 rounded-[32px] shadow-[inset_0_0_0_3px_rgba(255,255,255,0.06)]" />
           </motion.div>
 
-          <motion.div style={{ color: formColor }} className="hidden md:block text-[clamp(64px,9vw,164px)] font-semibold leading-none tracking-[-0.04em]">Form</motion.div>
-          <div className="text-center md:hidden text-[48px] font-semibold leading-none tracking-[-0.04em] text-[#f4f2ed]/42">Form</div>
+          <motion.div style={{ color: formColor }} className="hidden md:block text-[clamp(64px,9vw,164px)] font-semibold leading-none tracking-[-0.04em]">Solo</motion.div>
+          <div className="text-center md:hidden text-[48px] font-semibold leading-none tracking-[-0.04em] text-[#f4f2ed]/42">Solo</div>
         </div>
 
         <div className="absolute inset-x-0 bottom-0 hidden md:flex items-center justify-between px-7 py-3 text-[10px] font-mono uppercase tracking-[0.08em] text-white/30">
-          <span>EDITOR — COLOURIST</span><span>RUNTIME — 0:15</span><span>RATIO — 9:16</span>
+          <span>FOUNDER — LADE STACK</span><span>SOLO — BUILD</span><span>RATIO — 9:16</span>
         </div>
       </div>
     </section>
