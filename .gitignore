@@ -1,0 +1,9 @@
+﻿# env
+node_modules
+dist
+.vite
+.env
+.env.local
+.DS_Store
+# we keep prompts & assets; ignore large extracted frames
+frames/
